@@ -1,10 +1,9 @@
 class Persona:
-    def __init__(self, nombre, apellido, edad, *valores , **terminos):
+    def __init__(self, nombre, apellido, edad):
         self._nombre = nombre
-        self.apellido = apellido
-        self.edad = edad
-        self.valore = valores
-        self.terminos = terminos
+        self._apellido = apellido
+        self._edad = edad
+
 
     @property
     def nombre(self):
@@ -12,8 +11,22 @@ class Persona:
     @nombre.setter
     def nombre(self, nombre):
         print("llamando método set nombre"+nombre)
-
         self._nombre = nombre
+
+    @property
+    def apellido(self):
+        return self._apellido
+    @apellido.setter
+    def apellido(self, apellido):
+        self._apellido = apellido
+
+    @property
+    def edad(self):
+        return self._edad
+
+    @edad.setter
+    def edad(self, edad):
+        self._edad = edad
 
     def mostrar_detalle(self):
         print(f'Persona: {self.nombre} {self.apellido} {self.edad}')
